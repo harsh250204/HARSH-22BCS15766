@@ -1,0 +1,47 @@
+  // Step 1: Create a variable to hold your NFTs
+let nftCollection = [];
+
+// Step 2: Function to mint a new NFT
+function mintNFT(name, eyeColor, shirtType, bling) {
+    // Create an object to hold the metadata
+    let nft = {
+        name: name,
+        eyeColor: eyeColor,
+        shirtType: shirtType,
+        bling: bling
+    };
+
+    // Store the NFT in the nftCollection array
+    nftCollection.push(nft);
+}
+
+// Step 3: Function to list all NFTs
+function listNFTs() {
+    // Loop through the nftCollection array and print metadata
+    for (let i = 0; i < nftCollection.length; i++) {
+        console.log("NFT " + (i + 1) + " Metadata:");
+        console.log("Name: " + nftCollection[i].name);
+        console.log("Eye Color: " + nftCollection[i].eyeColor);
+        console.log("Shirt Type: " + nftCollection[i].shirtType);
+        console.log("Bling: " + nftCollection[i].bling);
+        console.log("-------------------------");
+    }
+}
+
+// Step 4: Function to get the total number of NFTs
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+// Call your functions below this line
+
+// Mint some NFTs
+mintNFT("Cool Cat", "Blue", "T-Shirt", "Gold Chain");
+mintNFT("Chill Dog", "Green", "Hoodie", "Diamond Earring");
+mintNFT("Funky Monkey", "Brown", "Sweater", "Silver Bracelet");
+
+// List all NFTs
+listNFTs();
+
+// Print the total number of NFTs
+console.log("Total NFTs Minted: " + getTotalSupply());
